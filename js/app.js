@@ -48,9 +48,9 @@ sections.forEach(function(section) {
     link.setAttribute('class','navLink');
     li.appendChild(link);
     navFragment.appendChild(li);
-    navbar.appendChild(navFragment);
-
   });
+  navbar.appendChild(navFragment);
+
 // Add class 'active' to section when near top of viewport
 
 
