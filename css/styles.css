@@ -251,3 +251,8 @@ ul {
   html {
     scroll-behavior: smooth;
   }
+
+  .active{
+      background-color: rgb(87, 160, 202);
+      border-radius: 50px;
+  }
