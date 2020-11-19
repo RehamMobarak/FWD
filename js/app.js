@@ -17,10 +17,12 @@
  * Define Global Variables
  *
  */
+
 const sections = document.querySelectorAll("section");
 const navbar = document.getElementById("navbar");
 const navFragment = document.createDocumentFragment();
 const links = document.querySelectorAll(".navLink");
+const topBtn = document.getElementById("topBtn");
 
 /**
  * End Global Variables
@@ -79,8 +81,21 @@ links.forEach(function (link) {
  *
  */
 
-// Build menu
+// Back to top
+window.onscroll = function() {showTopBtn()};
 
-// Scroll to section on link click
+function showTopBtn() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    topBtn.style.display = "block";
+  } else {
+    topBtn.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function backTopBtn() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 
 // Set sections as active
