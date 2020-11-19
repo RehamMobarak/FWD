@@ -92,7 +92,7 @@ function showTopBtn() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+// scroll to the top of the document
 function backTopBtn() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
