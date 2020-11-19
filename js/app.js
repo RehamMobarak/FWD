@@ -19,7 +19,7 @@
  */
 
 const sections = document.querySelectorAll("section");
-const navbar = document.getElementById("navbar");
+const navbar = document.getElementById("navbar__list");
 const navFragment = document.createDocumentFragment();
 const links = document.querySelectorAll(".navLink");
 const topBtn = document.getElementById("topBtn");
@@ -45,24 +45,24 @@ sections.forEach(function (section) {
   const link = document.createElement("a");
   link.innerText = sectionName;
   link.setAttribute("href", "#" + sectionId);
-  link.setAttribute("class", "navLink");
+  link.setAttribute("class", "menu__link");
   li.appendChild(link);
   navFragment.appendChild(li);
 });
 navbar.appendChild(navFragment);
 
-// Add class 'active' to section when near top of viewport
+// Add class 'your-active-class' to section when near top of viewport
 
 window.addEventListener("scroll", function () {
   sections.forEach((section) => {
-    section.classList.remove("active");
+    section.classList.remove("your-active-class");
     let dimensions = section.getBoundingClientRect();
     let isVisible =
       dimensions.top >= 0 &&
       dimensions.bottom <=
         (window.innerHeight || document.documentElement.clientHeight);
     if (isVisible) {
-      section.classList.add("active");
+      section.classList.add("your-active-class");
     }
   });
 });
@@ -98,4 +98,7 @@ function backTopBtn() {
   document.documentElement.scrollTop = 0;
 }
 
-// Set sections as active
+// Set menu sections as your-active-class
+window.addEventListener("scroll",()=>{
+  navbar.style.backgroundColor = "#04123f";
+})
