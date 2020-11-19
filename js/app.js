@@ -17,7 +17,7 @@
  * Define Global Variables
  *
  */
-
+const startingTime = performance.now();
 const sections = document.querySelectorAll("section");
 const navbar = document.getElementById("navbar__list");
 const navFragment = document.createDocumentFragment();
@@ -84,16 +84,12 @@ links.forEach(function (link) {
 
 // Back to top
 window.onscroll = function () {
-  showTopBtn();
-};
-
-function showTopBtn() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     topBtn.style.display = "block";
   } else {
     topBtn.style.display = "none";
   }
-}
+};
 
 // scroll to the top of the document
 function backTopBtn() {
@@ -113,3 +109,6 @@ function active_link(section) {
     }
   });
 }
+
+const endingTime = performance.now();
+console.log("This code took " + (endingTime - startingTime) + " milliseconds.");
