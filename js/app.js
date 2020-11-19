@@ -21,7 +21,7 @@
 const sections = document.querySelectorAll("section");
 const navbar = document.getElementById("navbar__list");
 const navFragment = document.createDocumentFragment();
-const links = document.querySelectorAll(".navLink");
+const links = document.querySelectorAll(".menu__link");
 const topBtn = document.getElementById("topBtn");
 
 /**
@@ -63,6 +63,7 @@ window.addEventListener("scroll", function () {
         (window.innerHeight || document.documentElement.clientHeight);
     if (isVisible) {
       section.classList.add("your-active-class");
+      active_link(section);
     }
   });
 });
@@ -82,7 +83,9 @@ links.forEach(function (link) {
  */
 
 // Back to top
-window.onscroll = function() {showTopBtn()};
+window.onscroll = function () {
+  showTopBtn();
+};
 
 function showTopBtn() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -98,7 +101,15 @@ function backTopBtn() {
   document.documentElement.scrollTop = 0;
 }
 
-// Set menu sections as your-active-class
-window.addEventListener("scroll",()=>{
-  navbar.style.backgroundColor = "#04123f";
-})
+//Set menu items as active
+
+const allLinks = document.querySelectorAll("a");
+function active_link(section) {
+  let activeSectionName = section.getAttribute("data-nav");
+  allLinks.forEach(function (link) {
+    link.classList.remove("active_link");
+    if (link.innerText == activeSectionName) {
+      link.classList.add("active_link");
+    }
+  });
+}
