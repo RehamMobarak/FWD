@@ -2,12 +2,30 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Introduction](#Introduction)
+*[Technology](#Technology)
+*[Launch](#Launch)
+*[Features](#Features)
+*[Sources](#Sources)
 
-## Instructions
+## Introduction - the project's aim
+This starter project has some HTML and CSS styling to display an interactive version of the Landing Page project by primarily using JavaScript .
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## Technologies
+HTML5
+CSS3
+JavaScript Version: ES2015/ES6
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Launch
+Open index.html
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+## Features
+Build the navigation menu by DOM.
+Distinguish the section in view.
+Smooth scrolling to sections when clicking on navbar link.
+Add an active state to the related navigation item when a section is in the viewport.
+A scroll to top button on the page that’s only visible when the user scrolls below the fold of the page.
+
+## Sources
+Project was based on a given task by Udacity.
+Starter code here https://github.com/udacity/fend/tree/refresh-2019 "landing page"
