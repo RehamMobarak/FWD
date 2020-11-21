@@ -122,7 +122,7 @@ window.addEventListener("scroll", function () {
   } else {
     setTimeout(function () {
       navbar.style.display = "none";
-    }, 1000);
+    }, 700);
     isScrolling = true;
   }
 });
