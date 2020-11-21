@@ -17,7 +17,7 @@
  * Define Global Variables
  *
  */
-const startingTime = performance.now();
+// const startingTime = performance.now();
 const sections = document.querySelectorAll("section");
 const navbar = document.getElementById("navbar__list");
 const navFragment = document.createDocumentFragment();
@@ -110,5 +110,22 @@ function active_link(section) {
   });
 }
 
-const endingTime = performance.now();
-console.log("This code took " + (endingTime - startingTime) + " milliseconds.");
+//Hide navbar when not scrolling
+//scrolling display block === show
+//no scrolling display none == hide
+
+let isScrolling = true; 
+window.addEventListener("scroll", function () {
+  if (isScrolling) {
+    navbar.style.display = "block";
+    isScrolling = false;
+  } else {
+    setTimeout(function () {
+      navbar.style.display = "none";
+    }, 1000);
+    isScrolling = true;
+  }
+});
+
+// const endingTime = performance.now();
+// console.log("This code took " + (endingTime - startingTime) + " milliseconds.");
