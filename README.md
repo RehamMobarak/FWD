@@ -3,10 +3,10 @@
 ## Table of Contents
 
 * [Introduction](#Introduction)
-*[Technology](#Technology)
-*[Launch](#Launch)
-*[Features](#Features)
-*[Sources](#Sources)
+* [Technology](#Technology)
+* [Launch](#Launch)
+* [Features](#Features)
+* [Sources](#Sources)
 
 ## Introduction - the project's aim
 This starter project has some HTML and CSS styling to display an interactive version of the Landing Page project by primarily using JavaScript .
