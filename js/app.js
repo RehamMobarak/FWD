@@ -60,7 +60,7 @@ window.addEventListener("scroll", function () {
     let isVisible =
       dimensions.top >= 0 &&
       dimensions.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight);
+      (window.innerHeight || document.documentElement.clientHeight);
     if (isVisible) {
       section.classList.add("your-active-class");
       active_link(section);
@@ -100,6 +100,7 @@ function backTopBtn() {
 //Set menu items as active
 
 const allLinks = document.querySelectorAll("a");
+
 function active_link(section) {
   let activeSectionName = section.getAttribute("data-nav");
   allLinks.forEach(function (link) {
@@ -113,8 +114,7 @@ function active_link(section) {
 //Hide navbar when not scrolling
 //scrolling display block === show
 //no scrolling display none == hide
-
-let isScrolling = true; 
+let isScrolling = true;
 window.addEventListener("scroll", function () {
   if (isScrolling) {
     navbar.style.display = "block";
