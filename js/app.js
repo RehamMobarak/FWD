@@ -56,12 +56,27 @@ navbar.appendChild(navFragment);
 window.addEventListener("scroll", function () {
   sections.forEach((section) => {
     section.classList.remove("your-active-class");
-    let dimensions = section.getBoundingClientRect();
-    let isVisible =
-      dimensions.top >= 0 &&
-      dimensions.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight);
-    if (isVisible) {
+    function elementInViewport(el) {
+      var top = el.offsetTop;
+      var left = el.offsetLeft;
+      var width = el.offsetWidth;
+      var height = el.offsetHeight;
+
+      while (el.offsetParent) {
+        el = el.offsetParent;
+        top += el.offsetTop;
+        left += el.offsetLeft;
+      }
+
+      return (
+        top < window.pageYOffset + window.innerHeight &&
+        left < window.pageXOffset + window.innerWidth &&
+        top + height > window.pageYOffset &&
+        left + width > window.pageXOffset
+      );
+    }
+
+    if (elementInViewport(section)) {
       section.classList.add("your-active-class");
       active_link(section);
     }
@@ -83,7 +98,7 @@ links.forEach(function (link) {
  */
 
 // Back to top
-window.onscroll = function () {
+window.onscroll = () => {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     topBtn.style.display = "block";
   } else {
@@ -126,6 +141,3 @@ window.addEventListener("scroll", function () {
     isScrolling = true;
   }
 });
-
-// const endingTime = performance.now();
-// console.log("This code took " + (endingTime - startingTime) + " milliseconds.");
