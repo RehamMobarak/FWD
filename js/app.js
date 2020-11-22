@@ -17,7 +17,6 @@
  * Define Global Variables
  *
  */
-// const startingTime = performance.now();
 const sections = document.querySelectorAll("section");
 const navbar = document.getElementById("navbar__list");
 const navFragment = document.createDocumentFragment();
@@ -56,6 +55,7 @@ navbar.appendChild(navFragment);
 window.addEventListener("scroll", function () {
   sections.forEach((section) => {
     section.classList.remove("your-active-class");
+
     function isVisible(section) {
       let top = section.offsetTop;
       let left = section.offsetLeft;
@@ -127,8 +127,6 @@ function active_link(section) {
 }
 
 //Hide navbar when not scrolling
-//scrolling display block === show
-//no scrolling display none == hide
 let isScrolling = true;
 window.addEventListener("scroll", function () {
   if (isScrolling) {
