@@ -55,7 +55,6 @@ navbar.appendChild(navFragment);
 window.addEventListener("scroll", function () {
   sections.forEach((section) => {
     section.classList.remove("your-active-class");
-
     function isVisible(section) {
       let top = section.offsetTop;
       let left = section.offsetLeft;
